@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Outwith</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="Outwith_Avatar.png">
+
   <style>
     body {
       margin: 0;
@@ -14,17 +18,17 @@
 
     /* Constrain site width */
     .container {
-      max-width: 1400px; /* adjust as needed */
+      max-width: 1400px;
       margin: 0 auto;
-      padding: 0 20px; /* keeps some breathing space on smaller screens */
+      padding: 0 20px;
     }
 
     header {
       display: flex;
       justify-content: space-between;
       align-items: top;
-      padding-top: 40px; /* space above nav */
-      padding-bottom: 40px; /* space below nav */
+      padding-top: 40px;
+      padding-bottom: 40px;
     }
 
     header img {
@@ -35,7 +39,7 @@
       display: block;
       max-width: 100%;
       height: auto;
-      margin: 0 auto 80px auto; /* 80px gap below GIF */
+      margin: 0 auto 80px auto; /* centered with spacing below */
     }
 
     footer {
@@ -52,26 +56,34 @@
     }
 
     a.button {
-        display: inline-block;
-        margin-top: 0px;
-        padding: 10px 30px;
-        background-color: #FFFCF8;
-        color: #191919;
-        border-radius: 80px;
-        text-decoration: none;
-        font-size: 14px;
-        transition: background 0.3s, color 0.3s;
+      display: inline-block;
+      margin-top: 0px;
+      padding: 10px 30px;
+      background-color: #FFFCF8;
+      color: #191919;
+      border-radius: 80px;
+      text-decoration: none;
+      font-size: 14px;
+      transition: background 0.3s, color 0.3s;
     }
     a.button:hover {
-        background-color: #95edff;
+      background-color: #95edff;
     }
-    @media (max-width: 600px) {
-        .tagline {
-            top: 20px;
-            left: 20px;
-            font-size: 14px;
-        }
 
+    /* Mobile tweaks */
+    @media (max-width: 600px) {
+      main img {
+        margin-bottom: 40px;
+        transform: scale(1.25); /* zooms in by 10% */
+        transform-origin: center;
+        padding-bottom: 60px;
+        padding-top: 60px;
+      }
+      footer {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -84,7 +96,12 @@
     </header>
 
     <main>
-      <img src="Work_examples_new.gif" alt="Work Examples">
+      <picture>
+        <!-- Mobile first (≤ 500px) -->
+        <source srcset="outwith-mobile.gif" media="(max-width: 500px)">
+        <!-- Default (desktop, > 500px) -->
+        <img src="outwith-desktop.gif" alt="Work Examples">
+      </picture>
     </main>
 
     <footer>
