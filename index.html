@@ -5,128 +5,77 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Outwith</title>
   <style>
-    /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      margin: 0;
+      font-family: Arial, sans-serif;
       background-color: #111;
       color: white;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
     }
 
-    /* Header */
+    /* Constrain site width */
+    .container {
+      max-width: 1400px; /* adjust as needed */
+      margin: 0 auto;
+      padding: 0 20px; /* keeps some breathing space on smaller screens */
+    }
+
     header {
       display: flex;
       justify-content: space-between;
-      align-items: flex-end;
-      padding: 60px 40px 20px 40px; /* top right bottom left */
-    }
-
-    header img.logo {
-      width: 250px;
-      height: auto;
-      display: block;
-    }
-
-    header nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 1rem;
-    }
-
-    header nav a:hover {
-      text-decoration: underline;
-    }
-
-    /* Main Content */
-    main {
-      flex: 1;
-      display: flex;
-      justify-content: center;
       align-items: center;
-      margin: 40px 0 80px 0; /* 40px gap above, 80px below */
+      padding-top: 40px; /* space above nav */
+      padding-bottom: 40px; /* space below nav */
+    }
+
+    header img {
+      height: 40px;
     }
 
     main img {
-      max-width: 100%;
-      max-height: 100vh;
-      width: auto;
-      height: auto;
-      object-fit: contain;
       display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto 80px auto; /* 80px gap below GIF */
     }
 
-    /* Footer */
     footer {
       display: flex;
       justify-content: space-between;
-      align-items: flex-end;
-      padding: 20px 40px;
-      font-size: 0.9rem;
+      padding-bottom: 40px;
+      font-size: 14px;
       color: #ddd;
     }
 
-    footer a {
-      color: #ddd;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    /* Mobile */
-    @media (max-width: 768px) {
-      header {
-        padding: 40px 20px 20px 20px; /* less top padding for smaller screens */
-        flex-direction: row;
-        align-items: flex-start;
-      }
-
-      header img.logo {
-        width: 180px; /* smaller logo on mobile */
-      }
-
-      header nav {
-        margin-top: 8px;
-      }
-
-      footer {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-        font-size: 0.85rem;
-      }
+    footer div {
+      max-width: 300px;
+      line-height: 1.6;
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="Outwith_Logo_White.svg" alt="Outwith Logo" class="logo">
-    <nav><a href="https://www.instagram.com/outwith_studio/" target="_blank">Projects</a></nav>
-  </header>
+  <div class="container">
+    <header>
+      <img src="Outwith_Logo_White.svg" alt="Outwith Logo">
+      <nav>
+        <a href="#" style="color:white; text-decoration:none;">Projects</a>
+      </nav>
+    </header>
 
-  <main>
-    <img src="Work_examples_new.gif" alt="Work Examples">
-  </main>
+    <main>
+      <img src="Work_examples_new.gif" alt="Work Examples">
+    </main>
 
-  <footer>
-    <div class="left">
-      <p>Visual identity design.<br>
-      Straight up.<br>
-      No buzzwords.<br>
-      No bullsh*t.</p>
-    </div>
-    <div class="right">
-      <a href="mailto:outwith.studio@icloud.com">outwith.studio@icloud.com</a>
-    </div>
-  </footer>
+    <footer>
+      <div>
+        Visual identity design.<br>
+        Straight up.<br>
+        No buzzwords.<br>
+        No bullsh*t.
+      </div>
+      <div>
+        outwith.studio@icloud.com
+      </div>
+    </footer>
+  </div>
 </body>
 </html>
