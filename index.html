@@ -26,8 +26,7 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
-      padding: 20px 40px;
-      height: 130px;
+      padding: 60px 40px 20px 40px; /* top right bottom left */
     }
 
     header img.logo {
@@ -86,13 +85,13 @@
     /* Mobile */
     @media (max-width: 768px) {
       header {
-        padding: 20px;
-        height: auto;
+        padding: 40px 20px 20px 20px; /* less top padding for smaller screens */
+        flex-direction: row;
         align-items: flex-start;
       }
 
       header img.logo {
-        width: 180px; /* scale logo down for mobile */
+        width: 180px; /* smaller logo on mobile */
       }
 
       header nav {
