@@ -20,13 +20,13 @@
       height: 130px;
       display: flex;
       justify-content: space-between;
-      align-items: baseline; /* aligns "Projects" with logo baseline */
+      align-items: center;
       padding: 0 40px;
       box-sizing: border-box;
     }
 
     header img {
-      width: 250px;
+      width: 250px; /* fixed width for logo */
       height: auto;
       display: block;
     }
@@ -35,6 +35,8 @@
       color: #ffffff;
       text-decoration: none;
       font-size: 16px;
+      align-self: flex-end; /* aligns with logo baseline */
+      margin-bottom: 8px;   /* fine-tune alignment */
     }
 
     header a:hover {
@@ -48,11 +50,15 @@
       justify-content: center;
       align-items: center;
       padding: 0;
+      overflow: visible; /* prevent cropping */
     }
 
     main img {
-      width: 100%;     /* fill width */
-      height: auto;    /* lock aspect ratio */
+      max-width: 100%;
+      max-height: 100vh; /* keeps within viewport height */
+      height: auto;
+      width: auto;
+      object-fit: contain; /* maintain aspect ratio */
       display: block;
     }
 
@@ -77,7 +83,7 @@
       text-decoration: underline;
     }
 
-    /* Responsive tweaks (mobile view) */
+    /* Responsive tweaks */
     @media (max-width: 768px) {
       header {
         height: auto;
@@ -87,23 +93,24 @@
       }
 
       header img {
-        width: 180px;
-        margin-bottom: 8px;
+        width: 180px; /* smaller logo */
       }
 
       header a {
         font-size: 14px;
-        margin-top: 0;
+        margin-top: 8px;
+        margin-bottom: 0;
+        align-self: flex-start; /* stacks under logo */
       }
 
-      main img {
-        width: 100%;
-        height: auto;
+      main {
+        padding: 0 10px;
       }
 
       footer {
         flex-direction: column;
         align-items: flex-start;
+        justify-content: flex-end;
         font-size: 12px;
         min-height: auto;
         padding: 20px;
@@ -116,7 +123,7 @@
 
     @media (max-width: 480px) {
       header img {
-        width: 150px;
+        width: 150px; /* smaller for small phones */
       }
     }
   </style>
